@@ -1,0 +1,77 @@
+name: Kanban Tool API
+description: API for accessing and managing Kanban boards, tasks, and workflows
+image: https://example.com/kanban-logo.png
+url: https://kanbantool.com
+tags:
+- kanban
+- project management
+- task management
+- agile
+- workflow
+created: '2024-01-15'
+modified: '2024-01-15'
+specificationVersion: '0.16'
+apis:
+- name: Kanban Tool REST API
+  description: RESTful API for managing boards, tasks, columns, and team members
+  image: https://example.com/kanban-api-icon.png
+  humanURL: https://kanbantool.com/api/docs
+  baseURL: https://kanbantool.com/api/v3
+  tags:
+  - boards
+  - tasks
+  - cards
+  - columns
+  - users
+  - comments
+  - attachments
+  properties:
+  - type: Documentation
+    url: https://kanbantool.com/api/docs
+  - type: OpenAPI
+    url: https://kanbantool.com/api/openapi.json
+  - type: Authentication
+    url: https://kanbantool.com/api/docs/authentication
+  - type: Pricing
+    url: https://kanbantool.com/pricing
+  - type: Terms of Service
+    url: https://kanbantool.com/terms
+  - type: Privacy Policy
+    url: https://kanbantool.com/privacy
+  - type: Support
+    url: https://kanbantool.com/support
+  - type: Status
+    url: https://status.kanbantool.com
+  - type: Rate Limits
+    url: https://kanbantool.com/api/docs/rate-limits
+  - type: SDKs
+    url: https://kanbantool.com/api/sdks
+  - type: Webhooks
+    url: https://kanbantool.com/api/docs/webhooks
+  - type: Changelog
+    url: https://kanbantool.com/api/changelog
+  contact:
+  - type: Email
+    url: mailto:api@kanbantool.com
+  - type: Twitter
+    url: https://twitter.com/kanbantool
+  - type: Support
+    url: https://kanbantool.com/support/contact
+common:
+- type: Blog
+  url: https://kanbantool.com/blog
+- type: Getting Started
+  url: https://kanbantool.com/api/docs/getting-started
+- type: Authentication
+  url: https://kanbantool.com/api/docs/authentication
+- type: Error Codes
+  url: https://kanbantool.com/api/docs/errors
+- type: Sign Up
+  url: https://kanbantool.com/signup
+- type: Login
+  url: https://kanbantool.com/login
+maintainers:
+- name: Kanban Tool Team
+  email: api@kanbantool.com
+  url: https://kanbantool.com
+  twitter: kanbantool
