@@ -7,10 +7,10 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
+  - Agile
   - Kanban
   - Project Management
   - Task Management
-  - Agile
   - Workflow
 url: https://raw.githubusercontent.com/api-evangelist/kanban/refs/heads/main/apis.yml
 created: '2024-01-15'
@@ -26,9 +26,9 @@ apis:
     baseURL: https://kanbantool.com/api/v3
     tags:
       - Boards
-      - Tasks
       - Cards
       - Columns
+      - Tasks
     properties:
       - type: Documentation
         url: https://kanbantool.com/api/docs
