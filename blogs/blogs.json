@@ -1,0 +1,13 @@
+{
+  "repo": "kanban",
+  "feeds": [
+    {
+      "source": "https://kanbantool.com/blog",
+      "feed_url": "https://kanbantool.com/blog.rss",
+      "saved": 10,
+      "title": "RSS feed for Kanban Tool blog"
+    }
+  ],
+  "post_count": 10,
+  "fetched": "2026-05-03T23:30:06Z"
+}
