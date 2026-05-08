@@ -43,6 +43,8 @@ apis:
         url: https://kanbantool.com/developer/api-v3
       - type: Authentication
         url: https://kanbantool.com/developer/api-v3
+      - type: OpenAPI
+        url: openapi/kanban-openapi.yml
   - aid: kanban:kanban-tool-rest-api-v1
     name: Kanban Tool REST API v1
     description: >-

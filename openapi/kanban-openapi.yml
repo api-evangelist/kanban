@@ -1,0 +1,325 @@
+openapi: 3.1.0
+info:
+  title: Kanban Tool API v3
+  description: Minimal OpenAPI 3.1 description of the Kanban Tool REST API v3 covering users, boards, tasks, subtasks, comments, attachments, and time trackers.
+  version: "3.0.0"
+x-generated-from: https://kanbantool.com/developer/api-v3
+x-generated-by: claude-crawl-2026-05-08
+servers:
+  - url: https://YOUR_DOMAIN.kanbantool.com/api/v3
+    description: Kanban Tool account API base
+paths:
+  /users/{user_id}.json:
+    parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      summary: Get user
+      operationId: getUser
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+  /users/current.json:
+    get:
+      summary: Get current user
+      operationId: getCurrentUser
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+  /boards/{board_id}/preload.json:
+    parameters:
+      - name: board_id
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      summary: Get board overview
+      operationId: getBoardPreload
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+  /boards/{board_id}.json:
+    parameters:
+      - name: board_id
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      summary: Get board with full details
+      operationId: getBoard
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+  /boards/{board_id}/changelog.json:
+    parameters:
+      - name: board_id
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      summary: List board changelog entries
+      operationId: getBoardChangelog
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+  /tasks/search.json:
+    get:
+      summary: Search tasks
+      operationId: searchTasks
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+  /tasks/{task_id}/preload.json:
+    parameters:
+      - name: task_id
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      summary: Get task overview
+      operationId: getTaskPreload
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+  /tasks/{task_id}.json:
+    parameters:
+      - name: task_id
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      summary: Get task with full details
+      operationId: getTask
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+    patch:
+      summary: Update task
+      operationId: updateTask
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: OK
+  /tasks.json:
+    post:
+      summary: Create task
+      operationId: createTask
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: Created
+  /subtasks.json:
+    post:
+      summary: Create subtask
+      operationId: createSubtask
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: Created
+  /subtasks/{subtask_id}.json:
+    parameters:
+      - name: subtask_id
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      summary: Update subtask
+      operationId: updateSubtask
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: OK
+    delete:
+      summary: Delete subtask
+      operationId: deleteSubtask
+      responses:
+        '204':
+          description: Deleted
+  /subtasks/reorder.json:
+    put:
+      summary: Reorder subtasks
+      operationId: reorderSubtasks
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: OK
+  /tasks/{task_id}/comments.json:
+    parameters:
+      - name: task_id
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: Create comment
+      operationId: createComment
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: Created
+  /tasks/{task_id}/comments/{comment_id}.json:
+    parameters:
+      - name: task_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: comment_id
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Delete comment
+      operationId: deleteComment
+      responses:
+        '204':
+          description: Deleted
+  /attachments.json:
+    post:
+      summary: Upload attachment
+      operationId: createAttachment
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: Created
+  /attachments/{attachment_id}/detach.json:
+    parameters:
+      - name: attachment_id
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Detach attachment
+      operationId: detachAttachment
+      responses:
+        '204':
+          description: Detached
+  /attachments/{attachment_id}/set_mode.json:
+    parameters:
+      - name: attachment_id
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      summary: Set attachment mode
+      operationId: setAttachmentMode
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: OK
+  /time_trackers.json:
+    post:
+      summary: Create time tracker
+      operationId: createTimeTracker
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: Created
+  /time_trackers/{time_tracker_id}.json:
+    parameters:
+      - name: time_tracker_id
+        in: path
+        required: true
+        schema:
+          type: string
+    put:
+      summary: Update time tracker
+      operationId: updateTimeTracker
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: OK
+    delete:
+      summary: Delete time tracker
+      operationId: deleteTimeTracker
+      responses:
+        '204':
+          description: Deleted
