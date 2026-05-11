@@ -91,6 +91,13 @@ common:
     url: https://kanbantool.com/integrations
   - type: Kanban Guide
     url: https://kanbantool.com/kanban-guide/introduction
+integrations:
+  - name: Kanban Tool
+  - name: icon
+  - name: cs
+  - name: it
+  - name: pl
+  - name: ru
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
