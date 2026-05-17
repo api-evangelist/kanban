@@ -83,7 +83,7 @@ common:
     url: https://kanbantool.com/blog
   - type: Pricing
     url: https://kanbantool.com/pricing
-  - type: Sign Up
+  - type: SignUp
     url: https://kanbantool.com/signup/new
   - type: Support
     url: https://kanbantool.com/support/introduction
