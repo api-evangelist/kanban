@@ -1,0 +1,818 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Kanban Tool API v3
+  description: 'Kanban Tool API v3. 22 operations. Lead operation: Upload attachment. Self-contained Naftiko capability covering
+    one Kanban business surface.'
+  tags:
+  - Kanban
+  - Kanban Tool API v3
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    KANBAN_API_KEY: KANBAN_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: kanban
+    baseUri: https://YOUR_DOMAIN.kanbantool.com/api/v3
+    description: Kanban Tool API v3 business capability. Self-contained, no shared references.
+    resources:
+    - name: attachments.json
+      path: /attachments.json
+      operations:
+      - name: createattachment
+        method: POST
+        description: Upload attachment
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: attachments-attachment_id-detach.json
+      path: /attachments/{attachment_id}/detach.json
+      operations:
+      - name: detachattachment
+        method: DELETE
+        description: Detach attachment
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: attachments-attachment_id-set_mode.json
+      path: /attachments/{attachment_id}/set_mode.json
+      operations:
+      - name: setattachmentmode
+        method: PATCH
+        description: Set attachment mode
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: boards-board_id}.json
+      path: /boards/{board_id}.json
+      operations:
+      - name: getboard
+        method: GET
+        description: Get board with full details
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: boards-board_id-changelog.json
+      path: /boards/{board_id}/changelog.json
+      operations:
+      - name: getboardchangelog
+        method: GET
+        description: List board changelog entries
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: boards-board_id-preload.json
+      path: /boards/{board_id}/preload.json
+      operations:
+      - name: getboardpreload
+        method: GET
+        description: Get board overview
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: subtasks.json
+      path: /subtasks.json
+      operations:
+      - name: createsubtask
+        method: POST
+        description: Create subtask
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: subtasks-reorder.json
+      path: /subtasks/reorder.json
+      operations:
+      - name: reordersubtasks
+        method: PUT
+        description: Reorder subtasks
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: subtasks-subtask_id}.json
+      path: /subtasks/{subtask_id}.json
+      operations:
+      - name: updatesubtask
+        method: PATCH
+        description: Update subtask
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+      - name: deletesubtask
+        method: DELETE
+        description: Delete subtask
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: tasks.json
+      path: /tasks.json
+      operations:
+      - name: createtask
+        method: POST
+        description: Create task
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: tasks-search.json
+      path: /tasks/search.json
+      operations:
+      - name: searchtasks
+        method: GET
+        description: Search tasks
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: tasks-task_id}.json
+      path: /tasks/{task_id}.json
+      operations:
+      - name: gettask
+        method: GET
+        description: Get task with full details
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: updatetask
+        method: PATCH
+        description: Update task
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: tasks-task_id-comments.json
+      path: /tasks/{task_id}/comments.json
+      operations:
+      - name: createcomment
+        method: POST
+        description: Create comment
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: tasks-task_id-comments-comment_id}.json
+      path: /tasks/{task_id}/comments/{comment_id}.json
+      operations:
+      - name: deletecomment
+        method: DELETE
+        description: Delete comment
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: tasks-task_id-preload.json
+      path: /tasks/{task_id}/preload.json
+      operations:
+      - name: gettaskpreload
+        method: GET
+        description: Get task overview
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: time_trackers.json
+      path: /time_trackers.json
+      operations:
+      - name: createtimetracker
+        method: POST
+        description: Create time tracker
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: time_trackers-time_tracker_id}.json
+      path: /time_trackers/{time_tracker_id}.json
+      operations:
+      - name: updatetimetracker
+        method: PUT
+        description: Update time tracker
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+      - name: deletetimetracker
+        method: DELETE
+        description: Delete time tracker
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: users-current.json
+      path: /users/current.json
+      operations:
+      - name: getcurrentuser
+        method: GET
+        description: Get current user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: users-user_id}.json
+      path: /users/{user_id}.json
+      operations:
+      - name: getuser
+        method: GET
+        description: Get user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: kanban-rest
+    port: 8080
+    description: REST adapter for Kanban Tool API v3. One Spectral-compliant resource per consumed operation, prefixed with
+      /v1.
+    resources:
+    - path: /v1/attachments-json
+      name: attachments-json
+      description: REST surface for attachments.json.
+      operations:
+      - method: POST
+        name: createattachment
+        description: Upload attachment
+        call: kanban.createattachment
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/attachments/{attachment-id}/detach-json
+      name: attachments-attachment-id-detach-json
+      description: REST surface for attachments-attachment_id-detach.json.
+      operations:
+      - method: DELETE
+        name: detachattachment
+        description: Detach attachment
+        call: kanban.detachattachment
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/attachments/{attachment-id}/set-mode-json
+      name: attachments-attachment-id-set-mode-json
+      description: REST surface for attachments-attachment_id-set_mode.json.
+      operations:
+      - method: PATCH
+        name: setattachmentmode
+        description: Set attachment mode
+        call: kanban.setattachmentmode
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/boards/board-id-json
+      name: boards-board-id-json
+      description: REST surface for boards-board_id}.json.
+      operations:
+      - method: GET
+        name: getboard
+        description: Get board with full details
+        call: kanban.getboard
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/boards/{board-id}/changelog-json
+      name: boards-board-id-changelog-json
+      description: REST surface for boards-board_id-changelog.json.
+      operations:
+      - method: GET
+        name: getboardchangelog
+        description: List board changelog entries
+        call: kanban.getboardchangelog
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/boards/{board-id}/preload-json
+      name: boards-board-id-preload-json
+      description: REST surface for boards-board_id-preload.json.
+      operations:
+      - method: GET
+        name: getboardpreload
+        description: Get board overview
+        call: kanban.getboardpreload
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/subtasks-json
+      name: subtasks-json
+      description: REST surface for subtasks.json.
+      operations:
+      - method: POST
+        name: createsubtask
+        description: Create subtask
+        call: kanban.createsubtask
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/subtasks/reorder-json
+      name: subtasks-reorder-json
+      description: REST surface for subtasks-reorder.json.
+      operations:
+      - method: PUT
+        name: reordersubtasks
+        description: Reorder subtasks
+        call: kanban.reordersubtasks
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/subtasks/subtask-id-json
+      name: subtasks-subtask-id-json
+      description: REST surface for subtasks-subtask_id}.json.
+      operations:
+      - method: PATCH
+        name: updatesubtask
+        description: Update subtask
+        call: kanban.updatesubtask
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deletesubtask
+        description: Delete subtask
+        call: kanban.deletesubtask
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/tasks-json
+      name: tasks-json
+      description: REST surface for tasks.json.
+      operations:
+      - method: POST
+        name: createtask
+        description: Create task
+        call: kanban.createtask
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/tasks/search-json
+      name: tasks-search-json
+      description: REST surface for tasks-search.json.
+      operations:
+      - method: GET
+        name: searchtasks
+        description: Search tasks
+        call: kanban.searchtasks
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/tasks/task-id-json
+      name: tasks-task-id-json
+      description: REST surface for tasks-task_id}.json.
+      operations:
+      - method: GET
+        name: gettask
+        description: Get task with full details
+        call: kanban.gettask
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: updatetask
+        description: Update task
+        call: kanban.updatetask
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/tasks/{task-id}/comments-json
+      name: tasks-task-id-comments-json
+      description: REST surface for tasks-task_id-comments.json.
+      operations:
+      - method: POST
+        name: createcomment
+        description: Create comment
+        call: kanban.createcomment
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/tasks/{task-id}/comments/comment-id-json
+      name: tasks-task-id-comments-comment-id-json
+      description: REST surface for tasks-task_id-comments-comment_id}.json.
+      operations:
+      - method: DELETE
+        name: deletecomment
+        description: Delete comment
+        call: kanban.deletecomment
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/tasks/{task-id}/preload-json
+      name: tasks-task-id-preload-json
+      description: REST surface for tasks-task_id-preload.json.
+      operations:
+      - method: GET
+        name: gettaskpreload
+        description: Get task overview
+        call: kanban.gettaskpreload
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/time-trackers-json
+      name: time-trackers-json
+      description: REST surface for time_trackers.json.
+      operations:
+      - method: POST
+        name: createtimetracker
+        description: Create time tracker
+        call: kanban.createtimetracker
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/time-trackers/time-tracker-id-json
+      name: time-trackers-time-tracker-id-json
+      description: REST surface for time_trackers-time_tracker_id}.json.
+      operations:
+      - method: PUT
+        name: updatetimetracker
+        description: Update time tracker
+        call: kanban.updatetimetracker
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deletetimetracker
+        description: Delete time tracker
+        call: kanban.deletetimetracker
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/users/current-json
+      name: users-current-json
+      description: REST surface for users-current.json.
+      operations:
+      - method: GET
+        name: getcurrentuser
+        description: Get current user
+        call: kanban.getcurrentuser
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/users/user-id-json
+      name: users-user-id-json
+      description: REST surface for users-user_id}.json.
+      operations:
+      - method: GET
+        name: getuser
+        description: Get user
+        call: kanban.getuser
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: kanban-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Kanban Tool API v3. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: upload-attachment
+      description: Upload attachment
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: kanban.createattachment
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: detach-attachment
+      description: Detach attachment
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: kanban.detachattachment
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: set-attachment-mode
+      description: Set attachment mode
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: kanban.setattachmentmode
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-board-full-details
+      description: Get board with full details
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: kanban.getboard
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-board-changelog-entries
+      description: List board changelog entries
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: kanban.getboardchangelog
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-board-overview
+      description: Get board overview
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: kanban.getboardpreload
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-subtask
+      description: Create subtask
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: kanban.createsubtask
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: reorder-subtasks
+      description: Reorder subtasks
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: kanban.reordersubtasks
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-subtask
+      description: Update subtask
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: kanban.updatesubtask
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-subtask
+      description: Delete subtask
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: kanban.deletesubtask
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-task
+      description: Create task
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: kanban.createtask
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: search-tasks
+      description: Search tasks
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: kanban.searchtasks
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-task-full-details
+      description: Get task with full details
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: kanban.gettask
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-task
+      description: Update task
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: kanban.updatetask
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-comment
+      description: Create comment
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: kanban.createcomment
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-comment
+      description: Delete comment
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: kanban.deletecomment
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-task-overview
+      description: Get task overview
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: kanban.gettaskpreload
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-time-tracker
+      description: Create time tracker
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: kanban.createtimetracker
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-time-tracker
+      description: Update time tracker
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: kanban.updatetimetracker
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-time-tracker
+      description: Delete time tracker
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: kanban.deletetimetracker
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-current-user
+      description: Get current user
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: kanban.getcurrentuser
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-user
+      description: Get user
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: kanban.getuser
+      outputParameters:
+      - type: object
+        mapping: $.
