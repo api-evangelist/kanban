@@ -2,12 +2,20 @@
   "repo": "kanban",
   "feeds": [
     {
-      "source": "https://kanbantool.com/blog",
+      "source": "https://kanbantool.com/blog?format=rss",
       "feed_url": "https://kanbantool.com/blog?format=rss",
-      "title": "RSS feed for Kanban Tool blog",
-      "saved": 42
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    },
+    {
+      "source": "https://kanbantool.com/developer",
+      "feed_url": "https://kanbantool.com/developer",
+      "title": "",
+      "saved": 0,
+      "method": "none"
     }
   ],
   "post_count": 52,
-  "fetched": "2026-05-17T20:48:52Z"
+  "fetched": "2026-06-01T23:35:02Z"
 }
