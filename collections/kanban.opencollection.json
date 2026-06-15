@@ -1,0 +1,402 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Kanban Tool API v3",
+    "version": "3.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Get user",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://YOUR_DOMAIN.kanbantool.com/api/v3/users/:user_id.json",
+        "params": [
+          {
+            "name": "user_id",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get user"
+    },
+    {
+      "info": {
+        "name": "Get current user",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://YOUR_DOMAIN.kanbantool.com/api/v3/users/current.json"
+      },
+      "docs": "Get current user"
+    },
+    {
+      "info": {
+        "name": "Get board overview",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://YOUR_DOMAIN.kanbantool.com/api/v3/boards/:board_id/preload.json",
+        "params": [
+          {
+            "name": "board_id",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get board overview"
+    },
+    {
+      "info": {
+        "name": "Get board with full details",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://YOUR_DOMAIN.kanbantool.com/api/v3/boards/:board_id.json",
+        "params": [
+          {
+            "name": "board_id",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get board with full details"
+    },
+    {
+      "info": {
+        "name": "List board changelog entries",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://YOUR_DOMAIN.kanbantool.com/api/v3/boards/:board_id/changelog.json",
+        "params": [
+          {
+            "name": "board_id",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "List board changelog entries"
+    },
+    {
+      "info": {
+        "name": "Search tasks",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://YOUR_DOMAIN.kanbantool.com/api/v3/tasks/search.json"
+      },
+      "docs": "Search tasks"
+    },
+    {
+      "info": {
+        "name": "Get task overview",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://YOUR_DOMAIN.kanbantool.com/api/v3/tasks/:task_id/preload.json",
+        "params": [
+          {
+            "name": "task_id",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get task overview"
+    },
+    {
+      "info": {
+        "name": "Get task with full details",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://YOUR_DOMAIN.kanbantool.com/api/v3/tasks/:task_id.json",
+        "params": [
+          {
+            "name": "task_id",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get task with full details"
+    },
+    {
+      "info": {
+        "name": "Update task",
+        "type": "http"
+      },
+      "http": {
+        "method": "PATCH",
+        "url": "https://YOUR_DOMAIN.kanbantool.com/api/v3/tasks/:task_id.json",
+        "params": [
+          {
+            "name": "task_id",
+            "value": "",
+            "type": "path"
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Update task"
+    },
+    {
+      "info": {
+        "name": "Create task",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://YOUR_DOMAIN.kanbantool.com/api/v3/tasks.json",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create task"
+    },
+    {
+      "info": {
+        "name": "Create subtask",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://YOUR_DOMAIN.kanbantool.com/api/v3/subtasks.json",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create subtask"
+    },
+    {
+      "info": {
+        "name": "Update subtask",
+        "type": "http"
+      },
+      "http": {
+        "method": "PATCH",
+        "url": "https://YOUR_DOMAIN.kanbantool.com/api/v3/subtasks/:subtask_id.json",
+        "params": [
+          {
+            "name": "subtask_id",
+            "value": "",
+            "type": "path"
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Update subtask"
+    },
+    {
+      "info": {
+        "name": "Delete subtask",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "https://YOUR_DOMAIN.kanbantool.com/api/v3/subtasks/:subtask_id.json",
+        "params": [
+          {
+            "name": "subtask_id",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Delete subtask"
+    },
+    {
+      "info": {
+        "name": "Reorder subtasks",
+        "type": "http"
+      },
+      "http": {
+        "method": "PUT",
+        "url": "https://YOUR_DOMAIN.kanbantool.com/api/v3/subtasks/reorder.json",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Reorder subtasks"
+    },
+    {
+      "info": {
+        "name": "Create comment",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://YOUR_DOMAIN.kanbantool.com/api/v3/tasks/:task_id/comments.json",
+        "params": [
+          {
+            "name": "task_id",
+            "value": "",
+            "type": "path"
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create comment"
+    },
+    {
+      "info": {
+        "name": "Delete comment",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "https://YOUR_DOMAIN.kanbantool.com/api/v3/tasks/:task_id/comments/:comment_id.json",
+        "params": [
+          {
+            "name": "task_id",
+            "value": "",
+            "type": "path"
+          },
+          {
+            "name": "comment_id",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Delete comment"
+    },
+    {
+      "info": {
+        "name": "Upload attachment",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://YOUR_DOMAIN.kanbantool.com/api/v3/attachments.json",
+        "body": {
+          "type": "multipart-form",
+          "data": []
+        }
+      },
+      "docs": "Upload attachment"
+    },
+    {
+      "info": {
+        "name": "Detach attachment",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "https://YOUR_DOMAIN.kanbantool.com/api/v3/attachments/:attachment_id/detach.json",
+        "params": [
+          {
+            "name": "attachment_id",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Detach attachment"
+    },
+    {
+      "info": {
+        "name": "Set attachment mode",
+        "type": "http"
+      },
+      "http": {
+        "method": "PATCH",
+        "url": "https://YOUR_DOMAIN.kanbantool.com/api/v3/attachments/:attachment_id/set_mode.json",
+        "params": [
+          {
+            "name": "attachment_id",
+            "value": "",
+            "type": "path"
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Set attachment mode"
+    },
+    {
+      "info": {
+        "name": "Create time tracker",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://YOUR_DOMAIN.kanbantool.com/api/v3/time_trackers.json",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create time tracker"
+    },
+    {
+      "info": {
+        "name": "Update time tracker",
+        "type": "http"
+      },
+      "http": {
+        "method": "PUT",
+        "url": "https://YOUR_DOMAIN.kanbantool.com/api/v3/time_trackers/:time_tracker_id.json",
+        "params": [
+          {
+            "name": "time_tracker_id",
+            "value": "",
+            "type": "path"
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Update time tracker"
+    },
+    {
+      "info": {
+        "name": "Delete time tracker",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "https://YOUR_DOMAIN.kanbantool.com/api/v3/time_trackers/:time_tracker_id.json",
+        "params": [
+          {
+            "name": "time_tracker_id",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Delete time tracker"
+    }
+  ],
+  "bundled": true
+}
