@@ -5,7 +5,7 @@ description: >-
   methodology. It provides REST APIs (v1 and v3), browser SDK, and DevKit for programmatic access to boards, tasks,
   columns, comments, attachments, time tracking, and team members.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Agile
   - Boards
