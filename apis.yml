@@ -72,13 +72,13 @@ apis:
 common:
   - type: Website
     url: https://kanbantool.com
-  - type: Developer Portal
+  - type: DeveloperPortal
     url: https://kanbantool.com/developer
   - type: Blog
     url: https://kanbantool.com/blog
   - type: Pricing
     url: https://kanbantool.com/pricing
-  - type: SignUp
+  - type: Signup
     url: https://kanbantool.com/signup/new
   - type: Support
     url: https://kanbantool.com/support/introduction
