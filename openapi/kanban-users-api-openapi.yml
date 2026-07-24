@@ -1,0 +1,45 @@
+openapi: 3.1.0
+info:
+  title: Kanban Tool API v3 Attachments Users API
+  description: Minimal OpenAPI 3.1 description of the Kanban Tool REST API v3 covering users, boards, tasks, subtasks, comments, attachments, and time trackers.
+  version: 3.0.0
+servers:
+- url: https://YOUR_DOMAIN.kanbantool.com/api/v3
+  description: Kanban Tool account API base
+tags:
+- name: Users
+paths:
+  /users/{user_id}.json:
+    parameters:
+    - name: user_id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      summary: Get user
+      operationId: getUser
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+      tags:
+      - Users
+  /users/current.json:
+    get:
+      summary: Get current user
+      operationId: getCurrentUser
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+      tags:
+      - Users
+x-generated-from: https://kanbantool.com/developer/api-v3
+x-generated-by: claude-crawl-2026-05-08

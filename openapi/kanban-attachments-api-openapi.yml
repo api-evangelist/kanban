@@ -1,0 +1,48 @@
+openapi: 3.1.0
+info:
+  title: Kanban Tool API v3 Attachments API
+  description: Minimal OpenAPI 3.1 description of the Kanban Tool REST API v3 covering users, boards, tasks, subtasks, comments, attachments, and time trackers.
+  version: 3.0.0
+servers:
+- url: https://YOUR_DOMAIN.kanbantool.com/api/v3
+  description: Kanban Tool account API base
+tags:
+- name: Attachments
+paths:
+  /attachments/{attachment_id}/detach.json:
+    parameters:
+    - name: attachment_id
+      in: path
+      required: true
+      schema:
+        type: string
+    delete:
+      summary: Detach attachment
+      operationId: detachAttachment
+      responses:
+        '204':
+          description: Detached
+      tags:
+      - Attachments
+  /attachments/{attachment_id}/set_mode.json:
+    parameters:
+    - name: attachment_id
+      in: path
+      required: true
+      schema:
+        type: string
+    patch:
+      summary: Set attachment mode
+      operationId: setAttachmentMode
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Attachments
+x-generated-from: https://kanbantool.com/developer/api-v3
+x-generated-by: claude-crawl-2026-05-08

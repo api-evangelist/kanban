@@ -1,0 +1,72 @@
+openapi: 3.1.0
+info:
+  title: Kanban Tool API v3 Attachments Boards API
+  description: Minimal OpenAPI 3.1 description of the Kanban Tool REST API v3 covering users, boards, tasks, subtasks, comments, attachments, and time trackers.
+  version: 3.0.0
+servers:
+- url: https://YOUR_DOMAIN.kanbantool.com/api/v3
+  description: Kanban Tool account API base
+tags:
+- name: Boards
+paths:
+  /boards/{board_id}/preload.json:
+    parameters:
+    - name: board_id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      summary: Get board overview
+      operationId: getBoardPreload
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+      tags:
+      - Boards
+  /boards/{board_id}.json:
+    parameters:
+    - name: board_id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      summary: Get board with full details
+      operationId: getBoard
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+      tags:
+      - Boards
+  /boards/{board_id}/changelog.json:
+    parameters:
+    - name: board_id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      summary: List board changelog entries
+      operationId: getBoardChangelog
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+      tags:
+      - Boards
+x-generated-from: https://kanbantool.com/developer/api-v3
+x-generated-by: claude-crawl-2026-05-08

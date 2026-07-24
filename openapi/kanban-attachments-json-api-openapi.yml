@@ -1,0 +1,27 @@
+openapi: 3.1.0
+info:
+  title: Kanban Tool API v3 Attachments Attachments.json API
+  description: Minimal OpenAPI 3.1 description of the Kanban Tool REST API v3 covering users, boards, tasks, subtasks, comments, attachments, and time trackers.
+  version: 3.0.0
+servers:
+- url: https://YOUR_DOMAIN.kanbantool.com/api/v3
+  description: Kanban Tool account API base
+tags:
+- name: Attachments.json
+paths:
+  /attachments.json:
+    post:
+      summary: Upload attachment
+      operationId: createAttachment
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: Created
+      tags:
+      - Attachments.json
+x-generated-from: https://kanbantool.com/developer/api-v3
+x-generated-by: claude-crawl-2026-05-08

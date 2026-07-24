@@ -1,0 +1,41 @@
+openapi: 3.1.0
+info:
+  title: Kanban Tool API v3 Attachments Time Trackers API
+  description: Minimal OpenAPI 3.1 description of the Kanban Tool REST API v3 covering users, boards, tasks, subtasks, comments, attachments, and time trackers.
+  version: 3.0.0
+servers:
+- url: https://YOUR_DOMAIN.kanbantool.com/api/v3
+  description: Kanban Tool account API base
+tags:
+- name: Time Trackers
+paths:
+  /time_trackers/{time_tracker_id}.json:
+    parameters:
+    - name: time_tracker_id
+      in: path
+      required: true
+      schema:
+        type: string
+    put:
+      summary: Update time tracker
+      operationId: updateTimeTracker
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Time Trackers
+    delete:
+      summary: Delete time tracker
+      operationId: deleteTimeTracker
+      responses:
+        '204':
+          description: Deleted
+      tags:
+      - Time Trackers
+x-generated-from: https://kanbantool.com/developer/api-v3
+x-generated-by: claude-crawl-2026-05-08
