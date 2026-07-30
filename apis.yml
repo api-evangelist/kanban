@@ -5,7 +5,19 @@ description: >-
   methodology. It provides REST APIs (v1 and v3), browser SDK, and DevKit for programmatic access to boards, tasks,
   columns, comments, attachments, time tracking, and team members.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/kanban.png
 tags:
   - Agile
   - Boards
@@ -19,56 +31,173 @@ created: '2024-01-15'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: kanban:kanban-tool-rest-api-v3
-    name: Kanban Tool REST API v3
-    description: >-
-      Current REST API for Kanban Tool. Returns JSON responses, supports bulk task modifications, attachment operations,
-      and uses a flat namespace with associated objects in single responses. Authenticated via Bearer token.
-    humanURL: https://kanbantool.com/developer/api-v3
-    baseURL: https://YOUR_DOMAIN.kanbantool.com/api/v3
-    tags:
-      - Boards
-      - Cards
-      - Comments
-      - Attachments
-      - Tasks
-      - Subtasks
-      - Time Tracking
-      - Users
-    properties:
-      - type: Documentation
-        url: https://kanbantool.com/developer/api-v3
-      - type: Authentication
-        url: https://kanbantool.com/developer/api-v3
-      - type: OpenAPI
-        url: openapi/kanban-openapi.yml
-  - aid: kanban:kanban-tool-rest-api-v1
-    name: Kanban Tool REST API v1
-    description: >-
-      Legacy REST API for Kanban Tool. Supports both XML and JSON formats, uses a resource-oriented endpoint structure.
-      Remains supported for existing integrations.
-    humanURL: https://kanbantool.com/developer
-    tags:
-      - Boards
-      - Legacy
-      - Tasks
-      - Workflow
-    properties:
-      - type: Documentation
-        url: https://kanbantool.com/developer
-  - aid: kanban:kanban-tool-sdk
-    name: Kanban Tool Browser SDK
-    description: >-
-      Browser-side SDK for customizing the Kanban Tool interface. Enables adding custom buttons to context menus,
-      modifying styles, and extending UI behavior.
-    humanURL: https://kanbantool.com/developer
-    tags:
-      - SDK
-      - Browser
-      - Customization
-    properties:
-      - type: Documentation
-        url: https://kanbantool.com/developer
+- aid: kanban:kanban-tool-rest-api-v1
+  name: Kanban Tool REST API v1
+  description: >-
+    Legacy REST API for Kanban Tool. Supports both XML and JSON formats, uses a resource-oriented endpoint
+    structure. Remains supported for existing integrations.
+  humanURL: https://kanbantool.com/developer
+  tags:
+  - Boards
+  - Legacy
+  - Tasks
+  - Workflow
+  properties:
+  - type: Documentation
+    url: https://kanbantool.com/developer
+- aid: kanban:kanban-tool-sdk
+  name: Kanban Tool Browser SDK
+  description: >-
+    Browser-side SDK for customizing the Kanban Tool interface. Enables adding custom buttons to context
+    menus, modifying styles, and extending UI behavior.
+  humanURL: https://kanbantool.com/developer
+  tags:
+  - SDK
+  - Browser
+  - Customization
+  properties:
+  - type: Documentation
+    url: https://kanbantool.com/developer
+- aid: kanban:kanban-attachments-api
+  name: Kanban Tool Attachments API
+  description: The Attachments API from Kanban Tool — 2 operation(s) for attachments.
+  humanURL: https://kanbantool.com/developer/api-v3
+  baseURL: https://YOUR_DOMAIN.kanbantool.com/api/v3
+  tags:
+  - Attachments
+  properties:
+  - type: OpenAPI
+    url: openapi/kanban-attachments-api-openapi.yml
+  - type: Documentation
+    url: https://kanbantool.com/developer/api-v3
+  - type: Authentication
+    url: https://kanbantool.com/developer/api-v3
+- aid: kanban:kanban-attachments-json-api
+  name: Kanban Tool Attachments.json API
+  description: The Attachments.json API from Kanban Tool — 1 operation(s) for attachments.json.
+  humanURL: https://kanbantool.com/developer/api-v3
+  baseURL: https://YOUR_DOMAIN.kanbantool.com/api/v3
+  tags:
+  - Attachments.json
+  properties:
+  - type: OpenAPI
+    url: openapi/kanban-attachments-json-api-openapi.yml
+  - type: Documentation
+    url: https://kanbantool.com/developer/api-v3
+  - type: Authentication
+    url: https://kanbantool.com/developer/api-v3
+- aid: kanban:kanban-boards-api
+  name: Kanban Tool Boards API
+  description: The Boards API from Kanban Tool — 3 operation(s) for boards.
+  humanURL: https://kanbantool.com/developer/api-v3
+  baseURL: https://YOUR_DOMAIN.kanbantool.com/api/v3
+  tags:
+  - Boards
+  properties:
+  - type: OpenAPI
+    url: openapi/kanban-boards-api-openapi.yml
+  - type: Documentation
+    url: https://kanbantool.com/developer/api-v3
+  - type: Authentication
+    url: https://kanbantool.com/developer/api-v3
+- aid: kanban:kanban-subtasks-api
+  name: Kanban Tool Subtasks API
+  description: The Subtasks API from Kanban Tool — 2 operation(s) for subtasks.
+  humanURL: https://kanbantool.com/developer/api-v3
+  baseURL: https://YOUR_DOMAIN.kanbantool.com/api/v3
+  tags:
+  - Subtasks
+  properties:
+  - type: OpenAPI
+    url: openapi/kanban-subtasks-api-openapi.yml
+  - type: Documentation
+    url: https://kanbantool.com/developer/api-v3
+  - type: Authentication
+    url: https://kanbantool.com/developer/api-v3
+- aid: kanban:kanban-subtasks-json-api
+  name: Kanban Tool Subtasks.json API
+  description: The Subtasks.json API from Kanban Tool — 1 operation(s) for subtasks.json.
+  humanURL: https://kanbantool.com/developer/api-v3
+  baseURL: https://YOUR_DOMAIN.kanbantool.com/api/v3
+  tags:
+  - Subtasks.json
+  properties:
+  - type: OpenAPI
+    url: openapi/kanban-subtasks-json-api-openapi.yml
+  - type: Documentation
+    url: https://kanbantool.com/developer/api-v3
+  - type: Authentication
+    url: https://kanbantool.com/developer/api-v3
+- aid: kanban:kanban-tasks-api
+  name: Kanban Tool Tasks API
+  description: The Tasks API from Kanban Tool — 5 operation(s) for tasks.
+  humanURL: https://kanbantool.com/developer/api-v3
+  baseURL: https://YOUR_DOMAIN.kanbantool.com/api/v3
+  tags:
+  - Tasks
+  properties:
+  - type: OpenAPI
+    url: openapi/kanban-tasks-api-openapi.yml
+  - type: Documentation
+    url: https://kanbantool.com/developer/api-v3
+  - type: Authentication
+    url: https://kanbantool.com/developer/api-v3
+- aid: kanban:kanban-tasks-json-api
+  name: Kanban Tool Tasks.json API
+  description: The Tasks.json API from Kanban Tool — 1 operation(s) for tasks.json.
+  humanURL: https://kanbantool.com/developer/api-v3
+  baseURL: https://YOUR_DOMAIN.kanbantool.com/api/v3
+  tags:
+  - Tasks.json
+  properties:
+  - type: OpenAPI
+    url: openapi/kanban-tasks-json-api-openapi.yml
+  - type: Documentation
+    url: https://kanbantool.com/developer/api-v3
+  - type: Authentication
+    url: https://kanbantool.com/developer/api-v3
+- aid: kanban:kanban-time-trackers-api
+  name: Kanban Tool Time Trackers API
+  description: The Time Trackers API from Kanban Tool — 1 operation(s) for time trackers.
+  humanURL: https://kanbantool.com/developer/api-v3
+  baseURL: https://YOUR_DOMAIN.kanbantool.com/api/v3
+  tags:
+  - Time Trackers
+  properties:
+  - type: OpenAPI
+    url: openapi/kanban-time-trackers-api-openapi.yml
+  - type: Documentation
+    url: https://kanbantool.com/developer/api-v3
+  - type: Authentication
+    url: https://kanbantool.com/developer/api-v3
+- aid: kanban:kanban-time-trackers-json-api
+  name: Kanban Tool Time Trackers.json API
+  description: The Time Trackers.json API from Kanban Tool — 1 operation(s) for time trackers.json.
+  humanURL: https://kanbantool.com/developer/api-v3
+  baseURL: https://YOUR_DOMAIN.kanbantool.com/api/v3
+  tags:
+  - Time Trackers.json
+  properties:
+  - type: OpenAPI
+    url: openapi/kanban-time-trackers-json-api-openapi.yml
+  - type: Documentation
+    url: https://kanbantool.com/developer/api-v3
+  - type: Authentication
+    url: https://kanbantool.com/developer/api-v3
+- aid: kanban:kanban-users-api
+  name: Kanban Tool Users API
+  description: The Users API from Kanban Tool — 2 operation(s) for users.
+  humanURL: https://kanbantool.com/developer/api-v3
+  baseURL: https://YOUR_DOMAIN.kanbantool.com/api/v3
+  tags:
+  - Users
+  properties:
+  - type: OpenAPI
+    url: openapi/kanban-users-api-openapi.yml
+  - type: Documentation
+    url: https://kanbantool.com/developer/api-v3
+  - type: Authentication
+    url: https://kanbantool.com/developer/api-v3
 common:
   - type: AgenticAccess
     url: agentic-access/kanban-agentic-access.yml
