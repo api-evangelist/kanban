@@ -1,0 +1,32 @@
+{
+  "provider": "kanban",
+  "sources": [
+    "kanban-attachments-api-openapi.yml",
+    "kanban-attachments-json-api-openapi.yml",
+    "kanban-boards-api-openapi.yml",
+    "kanban-subtasks-api-openapi.yml",
+    "kanban-subtasks-json-api-openapi.yml",
+    "kanban-tasks-api-openapi.yml",
+    "kanban-tasks-json-api-openapi.yml",
+    "kanban-time-trackers-api-openapi.yml",
+    "kanban-time-trackers-json-api-openapi.yml",
+    "kanban-users-api-openapi.yml"
+  ],
+  "outputs": [
+    "kanban-attachments-api-openapi.yml",
+    "kanban-attachments-json-api-openapi.yml",
+    "kanban-boards-api-openapi.yml",
+    "kanban-subtasks-api-openapi.yml",
+    "kanban-subtasks-json-api-openapi.yml",
+    "kanban-tasks-api-openapi.yml",
+    "kanban-tasks-json-api-openapi.yml",
+    "kanban-time-trackers-api-openapi.yml",
+    "kanban-time-trackers-json-api-openapi.yml",
+    "kanban-users-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
