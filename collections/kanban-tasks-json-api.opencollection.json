@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Kanban Tool API v3 Attachments Tasks.json API",
+    "version": "3.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Tasks.json",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create task",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://YOUR_DOMAIN.kanbantool.com/api/v3/tasks.json",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create task"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

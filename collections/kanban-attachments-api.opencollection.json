@@ -1,0 +1,58 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Kanban Tool API v3 Attachments API",
+    "version": "3.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Attachments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Detach attachment",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://YOUR_DOMAIN.kanbantool.com/api/v3/attachments/:attachment_id/detach.json",
+            "params": [
+              {
+                "name": "attachment_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Detach attachment"
+        },
+        {
+          "info": {
+            "name": "Set attachment mode",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://YOUR_DOMAIN.kanbantool.com/api/v3/attachments/:attachment_id/set_mode.json",
+            "params": [
+              {
+                "name": "attachment_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Set attachment mode"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

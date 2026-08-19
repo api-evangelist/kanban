@@ -1,0 +1,58 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Kanban Tool API v3 Attachments Time Trackers API",
+    "version": "3.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Time Trackers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Update time tracker",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://YOUR_DOMAIN.kanbantool.com/api/v3/time_trackers/:time_tracker_id.json",
+            "params": [
+              {
+                "name": "time_tracker_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update time tracker"
+        },
+        {
+          "info": {
+            "name": "Delete time tracker",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://YOUR_DOMAIN.kanbantool.com/api/v3/time_trackers/:time_tracker_id.json",
+            "params": [
+              {
+                "name": "time_tracker_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete time tracker"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

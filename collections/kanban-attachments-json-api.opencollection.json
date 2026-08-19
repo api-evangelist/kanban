@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Kanban Tool API v3 Attachments Attachments.json API",
+    "version": "3.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Attachments.json",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Upload attachment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://YOUR_DOMAIN.kanbantool.com/api/v3/attachments.json",
+            "body": {
+              "type": "multipart-form",
+              "data": []
+            }
+          },
+          "docs": "Upload attachment"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

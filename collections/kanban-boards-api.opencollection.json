@@ -1,0 +1,72 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Kanban Tool API v3 Attachments Boards API",
+    "version": "3.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Boards",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get board overview",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://YOUR_DOMAIN.kanbantool.com/api/v3/boards/:board_id/preload.json",
+            "params": [
+              {
+                "name": "board_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get board overview"
+        },
+        {
+          "info": {
+            "name": "Get board with full details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://YOUR_DOMAIN.kanbantool.com/api/v3/boards/:board_id.json",
+            "params": [
+              {
+                "name": "board_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get board with full details"
+        },
+        {
+          "info": {
+            "name": "List board changelog entries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://YOUR_DOMAIN.kanbantool.com/api/v3/boards/:board_id/changelog.json",
+            "params": [
+              {
+                "name": "board_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List board changelog entries"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
