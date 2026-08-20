@@ -25,6 +25,14 @@ tags:
   - Project Management
   - Task Management
   - Time Tracking
+  - Workflows
+tags_raw:
+  - Agile
+  - Boards
+  - Kanban
+  - Project Management
+  - Task Management
+  - Time Tracking
   - Workflow
 url: https://raw.githubusercontent.com/api-evangelist/kanban/refs/heads/main/apis.yml
 created: '2024-01-15'
@@ -38,6 +46,11 @@ apis:
     structure. Remains supported for existing integrations.
   humanURL: https://kanbantool.com/developer
   tags:
+  - Boards
+  - Legacy
+  - Task
+  - Workflows
+  tags_raw:
   - Boards
   - Legacy
   - Tasks
@@ -134,6 +147,8 @@ apis:
   humanURL: https://kanbantool.com/developer/api-v3
   baseURL: https://YOUR_DOMAIN.kanbantool.com/api/v3
   tags:
+  - Task
+  tags_raw:
   - Tasks
   properties:
   - type: OpenAPI
@@ -190,6 +205,8 @@ apis:
   humanURL: https://kanbantool.com/developer/api-v3
   baseURL: https://YOUR_DOMAIN.kanbantool.com/api/v3
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
