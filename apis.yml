@@ -5,6 +5,18 @@ description: >-
   methodology. It provides REST APIs (v1 and v3), browser SDK, and DevKit for programmatic access to boards, tasks,
   columns, comments, attachments, time tracking, and team members.
 type: Index
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: unknown
