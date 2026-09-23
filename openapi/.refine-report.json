@@ -1,16 +1,7 @@
 {
   "provider": "kanban",
   "sources": [
-    "kanban-attachments-api-openapi.yml",
-    "kanban-attachments-json-api-openapi.yml",
-    "kanban-boards-api-openapi.yml",
-    "kanban-subtasks-api-openapi.yml",
-    "kanban-subtasks-json-api-openapi.yml",
-    "kanban-tasks-api-openapi.yml",
-    "kanban-tasks-json-api-openapi.yml",
-    "kanban-time-trackers-api-openapi.yml",
-    "kanban-time-trackers-json-api-openapi.yml",
-    "kanban-users-api-openapi.yml"
+    "_ae-authored/kanban-openapi.yml"
   ],
   "outputs": [
     "kanban-attachments-api-openapi.yml",
@@ -27,6 +18,53 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "kanban-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "kanban-openapi.yml: tagged paths GET /users/{user_id}.json -> Users",
+    "kanban-openapi.yml: tagged paths GET /users/current.json -> Users",
+    "kanban-openapi.yml: tagged paths GET /boards/{board_id}/preload.json -> Boards",
+    "kanban-openapi.yml: tagged paths GET /boards/{board_id}.json -> Boards",
+    "kanban-openapi.yml: tagged paths GET /boards/{board_id}/changelog.json -> Boards",
+    "kanban-openapi.yml: tagged paths GET /tasks/search.json -> Tasks",
+    "kanban-openapi.yml: tagged paths GET /tasks/{task_id}/preload.json -> Tasks",
+    "kanban-openapi.yml: tagged paths GET /tasks/{task_id}.json -> Tasks",
+    "kanban-openapi.yml: tagged paths PATCH /tasks/{task_id}.json -> Tasks",
+    "kanban-openapi.yml: tagged paths POST /tasks.json -> Tasks.json",
+    "kanban-openapi.yml: tagged paths POST /subtasks.json -> Subtasks.json",
+    "kanban-openapi.yml: tagged paths PATCH /subtasks/{subtask_id}.json -> Subtasks",
+    "kanban-openapi.yml: tagged paths DELETE /subtasks/{subtask_id}.json -> Subtasks",
+    "kanban-openapi.yml: tagged paths PUT /subtasks/reorder.json -> Subtasks",
+    "kanban-openapi.yml: tagged paths POST /tasks/{task_id}/comments.json -> Tasks",
+    "kanban-openapi.yml: tagged paths DELETE /tasks/{task_id}/comments/{comment_id}.json -> Tasks",
+    "kanban-openapi.yml: tagged paths POST /attachments.json -> Attachments.json",
+    "kanban-openapi.yml: tagged paths DELETE /attachments/{attachment_id}/detach.json -> Attachments",
+    "kanban-openapi.yml: tagged paths PATCH /attachments/{attachment_id}/set_mode.json -> Attachments",
+    "kanban-openapi.yml: tagged paths POST /time_trackers.json -> Time Trackers.json",
+    "kanban-openapi.yml: tagged paths PUT /time_trackers/{time_tracker_id}.json -> Time Trackers",
+    "kanban-openapi.yml: tagged paths DELETE /time_trackers/{time_tracker_id}.json -> Time Trackers",
+    "kanban-openapi.yml: declared missing tag: Attachments",
+    "kanban-openapi.yml: declared missing tag: Attachments.json",
+    "kanban-openapi.yml: declared missing tag: Boards",
+    "kanban-openapi.yml: declared missing tag: Subtasks",
+    "kanban-openapi.yml: declared missing tag: Subtasks.json",
+    "kanban-openapi.yml: declared missing tag: Tasks",
+    "kanban-openapi.yml: declared missing tag: Tasks.json",
+    "kanban-openapi.yml: declared missing tag: Time Trackers",
+    "kanban-openapi.yml: declared missing tag: Time Trackers.json",
+    "kanban-openapi.yml: declared missing tag: Users",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "kanban-attachments-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "kanban-attachments-json-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "kanban-boards-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "kanban-subtasks-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "kanban-subtasks-json-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "kanban-tasks-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "kanban-tasks-json-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "kanban-time-trackers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "kanban-time-trackers-json-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "kanban-users-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
