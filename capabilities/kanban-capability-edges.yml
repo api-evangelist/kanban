@@ -1,0 +1,47 @@
+slug: kanban
+provider: Kanban Tool
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 3
+edges:
+- tag: Tasks
+  spec_file: kanban-tasks-api-openapi.yml
+  capability_id: BC-900.30
+  capability_id_l1: BC-900
+  capability_name: Project Management
+  confidence: 0.75
+  evidence: '"Search tasks", "Get task with full details", "Update task", "Create comment" on a "visual
+    project management platform for managing boards, tasks, and workflows"'
+  reason: Operations manage work items (tasks) and their comments on a Kanban project-management board,
+    which realises project execution/tracking rather than any generic data object.
+- tag: Boards
+  spec_file: kanban-boards-api-openapi.yml
+  capability_id: BC-900.30
+  capability_id_l1: BC-900
+  capability_name: Project Management
+  confidence: 0.7
+  evidence: GET /boards/{board_id}.json  Get board with full details; GET /boards/{board_id}/changelog.json  List
+    board changelog entries
+  reason: Kanban boards are the work-tracking workspace of a 'visual project management platform'; reading
+    board detail, overview and changelog supports project execution tracking. Mapped to Project Management,
+    with moderate confidence since board reads are container/configuration-level rather than explicit
+    project planning.
+- tag: Subtasks
+  spec_file: kanban-subtasks-api-openapi.yml
+  capability_id: BC-900.30
+  capability_id_l1: BC-900
+  capability_name: Project Management
+  confidence: 0.7
+  evidence: PATCH /subtasks/{subtask_id}.json  Update subtask; PUT /subtasks/reorder.json  Reorder subtasks
+  reason: Subtask update, delete and reordering is work-item tracking within the Kanban project management
+    product, which maps to Project Management (project execution, planning, tracking). Confidence tempered
+    because the surface is thin CRUD on task items.

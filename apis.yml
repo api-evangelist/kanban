@@ -228,6 +228,9 @@ apis:
   - type: Authentication
     url: https://kanbantool.com/developer/api-v3
 common:
+  - type: CapabilityMap
+    url: capabilities/kanban-capability-edges.yml
+    name: Kanban Tool Business Capability Map
   - type: AgenticAccess
     url: agentic-access/kanban-agentic-access.yml
   - type: DomainSecurity
